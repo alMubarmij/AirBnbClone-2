@@ -1,6 +1,6 @@
 <p>
   <img src="https://img.shields.io/github/v/release/dvolberg/AirBnbClone?include_prereleasesma " />
-  <img src="https://img.shields.io/static/v1?label=flutter&message=1.10.16-pre.113&color=3fa9f5" />
+  <img src="https://img.shields.io/static/v1?label=flutter&message=1.12.3-pre.46&color=3fa9f5" />
   <img src="https://img.shields.io/static/v1?label=dart&message=2.7.0&color=yellow" />
 </p>
 
@@ -24,7 +24,13 @@ foo@bar:~/AirBnbClone$ flutter run
 ```
 Enjoy it 😉
 
-## 🚀 Futur improvements 
+## 🚀 Futur improvements
+- Messages pages
+- Profil pages
+- Discussion pages
+- View profil pages
+- Search bar
+- Performances
 - [ ... ]
 
 ## 🤔 What is FODB

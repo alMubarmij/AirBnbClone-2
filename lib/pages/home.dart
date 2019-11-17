@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage> {
             title: Text('Profil'.toUpperCase()),
           ),
         ],
-        selectedItemColor: Colors.red,
+        selectedItemColor: Color(0xfffd5c63),
         unselectedItemColor: Colors.black45,
         showUnselectedLabels: true,
         selectedFontSize: 8,

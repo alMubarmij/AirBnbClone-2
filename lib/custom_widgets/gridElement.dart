@@ -1,9 +1,13 @@
+import 'package:airbnb_clone/custom_widgets/scoreView.dart';
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 
 class GridElem extends StatelessWidget {
   final int index;
-  const GridElem({Key key, this.index}) : super(key: key);
+  final bool isExplorer;
+
+  const GridElem({Key key, this.index, this.isExplorer = true})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,48 +30,32 @@ class GridElem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  faker.address.country(),
+                  isExplorer == true ? faker.address.country() : 'Trip dates',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
+                    fontSize: isExplorer == true ? 14 : 10,
                   ),
                   overflow: TextOverflow.fade,
                   maxLines: 1,
                   softWrap: false,
                 ),
                 Text(
-                  faker.food.restaurant(),
+                  isExplorer == true
+                      ? faker.food.restaurant()
+                      : faker.address.country(),
                   style: TextStyle(
-                    fontSize: 12,
+                    fontSize: isExplorer == true ? 12 : 14,
                   ),
                   overflow: TextOverflow.fade,
                   maxLines: 1,
                   softWrap: false,
                 ),
-                Row(
-                  children: <Widget>[
-                    Text(
-                      '4.99',
-                      style: TextStyle(
-                        fontSize: 10,
-                        color: Color(0xff007D8C),
-                        fontWeight: FontWeight.bold,
+                isExplorer == true
+                    ? ScoreView()
+                    : Text(
+                        '1 réservation',
+                        style: TextStyle(fontSize: 9),
                       ),
-                    ),
-                    Icon(Icons.star, size: 12, color: Color(0xff007D8C)),
-                    Icon(Icons.star, size: 12, color: Color(0xff007D8C)),
-                    Icon(Icons.star, size: 12, color: Color(0xff007D8C)),
-                    Icon(Icons.star, size: 12, color: Color(0xff007D8C)),
-                    Icon(Icons.star, size: 12, color: Color(0xff007D8C)),
-                    Text(
-                      faker.randomGenerator.numbers(999, 1)[0].toString(),
-                      style: TextStyle(
-                        fontSize: 10,
-                        color: Color(0xff007D8C),
-                        fontWeight: FontWeight.bold,
-                      ),
-                    )
-                  ],
-                ),
               ],
             ),
           )
